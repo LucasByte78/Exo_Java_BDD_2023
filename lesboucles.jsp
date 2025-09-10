@@ -63,6 +63,7 @@
 <h2>Exercice 4 : Triangle rectangle 2</h2>
 <p>Ecrire le code afin de produire un triangle rectangle aligné sur la droite</p>
     <p>
+        <pre>
         <% for (int k = 1; k <= cpt; k++) { %>
             <% for (int m = cpt; m >= k;m--) { %>
                     <% out.print(" "); %>
@@ -72,6 +73,7 @@
             <% } %>
             </br>
         <% } %>
+        </pre>
     </p>
 <h2>Exercice 5 : Triangle isocele</h2>
 <p>Ecrire le code afin de produire un triangle rectangle aligné sur la droite</p>
