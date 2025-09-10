@@ -41,7 +41,7 @@
 <h2>Exercice 2 : Triangle rectangle gauche</h2>
 <p>Ecrire le code afin de produire un triangle rectangle aligné sur la gauche</p>
     <p>
-        <% for (int k = 1; i <= cpt; k++) { %>
+        <% for (int k = 1; k <= cpt; k++) { %>
             <%= "*" %>
             </br>
         <% } %>
