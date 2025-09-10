@@ -66,7 +66,7 @@
         <% for (int k = 1; k <= cpt; k++) { %>
             <% for (int l = 1 ; l <= k; l++) { %>
                 <% for (int m = cpt; m >= l;m--) { %>
-                    <%=&nbsb %>
+                    <&nbsp>
                 <% } %>
                 <%= "*" %>
             <% } %>
