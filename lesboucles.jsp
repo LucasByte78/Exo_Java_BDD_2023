@@ -30,7 +30,7 @@
 <p>Exemple si l'utilisateur saisie le valeur 5</p>
     <%int cpt = Integer.parseInt(valeur); %>
     <p>
-    <% for (int i = 1 ; i <= cpt; i++ { %>
+    <% for (int i = 1 ; i <= cpt; i++) { %>
         <% for (int j = 1 ; j <= cpt;j++) { %>
              <%= "*" %>
         <% } %>
