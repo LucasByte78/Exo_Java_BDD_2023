@@ -64,9 +64,7 @@
 <p>Ecrire le code afin de produire un triangle rectangle aligné sur la droite</p>
     <p>
         <pre style="font-family: monospace;">
-        <%
-        int cpt = Integer.parseInt(valeur);
-        
+        <%        
         for (int k = 1; k <= cpt; k++) {
             // espaces avant les étoiles
             for (int m = 1; m <= cpt - k; m++) {
