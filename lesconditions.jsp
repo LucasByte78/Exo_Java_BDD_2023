@@ -66,17 +66,17 @@ Oui C est compris entre A et B</p>
 
 <p>
 
-    <% if (intA%2 == 0) {%>
+    <% if (A%2 == 0) {%>
         <%= "La valeur A entree est pair"%>
     <%} else {%>
         <%= "La valeur A entree est impair"%>
     <%}%>
-        <% if (intB%2 == 0) {%>
+        <% if (B%2 == 0) {%>
         <%= "La valeur B entree est pair"%>
     <%} else {%>
         <%= "La valeur B entree est impair"%>
     <%}%>
-    <% if (intC%2 == 0) {%>
+    <% if (C%2 == 0) {%>
         <%= "La valeur C entree est pair"%>
     <%} else {%>
         <%= "La valeur C entree est impair"%>
