@@ -65,11 +65,11 @@
     <p>
         <pre style="font-family: monospace;">
         <% for (int k = 1; k <= cpt; k++) { %>
-            // espaces avant les étoiles
+            <% // espaces avant les étoiles %>
             <% for (int m = 1; m <= cpt - k; m++) { %>
                 &nbsp;&nbsp;
             <% } %>
-            // étoiles
+            <% // étoiles ù>
             <% for (int l = 1; l <= k; l++) {
                 out.print("*");
             }
