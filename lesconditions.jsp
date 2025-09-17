@@ -65,13 +65,21 @@ Oui C est compris entre A et B</p>
 <p>Écrivez un programme pour vérifier si un nombre est pair ou impair en utilisant une structure if</p>
 
 <p>
-    <% String val = request.getParameter("valeur1"); %>
-    <% int intVal = Integer.parseInt(val); %>
 
-    <% if (intVal%2 == 0) {%>
-        <%= "La valeur entree est pair"%>
+    <% if (intA%2 == 0) {%>
+        <%= "La valeur A entree est pair"%>
     <%} else {%>
-        <%= "La valeur entree est impair"%>
+        <%= "La valeur A entree est impair"%>
+    <%}%>
+        <% if (intB%2 == 0) {%>
+        <%= "La valeur B entree est pair"%>
+    <%} else {%>
+        <%= "La valeur B entree est impair"%>
+    <%}%>
+    <% if (intC%2 == 0) {%>
+        <%= "La valeur C entree est pair"%>
+    <%} else {%>
+        <%= "La valeur C entree est impair"%>
     <%}%>
 </p>
 
