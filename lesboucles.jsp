@@ -105,7 +105,7 @@
         &nbsp;&nbsp;
     <% } %>
 
-    <%-- Affichage des étoiles --%>
+    <% // Affichage des étoiles // %>
     <% for (int j = 1; j <= i; j++) { %>
        <%= "*" %>
     <% } %>
