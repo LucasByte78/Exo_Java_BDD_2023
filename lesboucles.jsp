@@ -68,7 +68,7 @@
         for (int k = 1; k <= cpt; k++) {
             // espaces avant les étoiles
             for (int m = 1; m <= cpt - k; m++) {
-                out.print(" ");
+                &nbdp;&nbsp;
             }
             // étoiles
             for (int l = 1; l <= k; l++) {
