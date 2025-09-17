@@ -98,24 +98,26 @@
 <p>Ecrire le code afin de produire un losange</p>
 <p>Exemple si l'utilisateur saisie le valeur 5</p>
 <p>
-    <% for (int k = 1; k <= cpt; k++) { %>
-        <% for (int l = cpt ; l >= k; l--) { %>
-            <%= "*" %>
-        <% } %>
-        </br>
-    <% } %>
+    <% // Partie supérieure du losange //
     <% for (int i = 1; i <= cpt; i++) { %>
-        <%-- Affichage des espaces --%>
-        <% for (int l = cpt; l < i; l++) { %>
-            &nbsp;&nbsp;
-        <% } %>
-
-        <%-- Affichage des étoiles --%>
-        <% for (int j = 1; j <= i; j++) { %>
-           <%= "*" %>
-        <% } %>
-    </br>
+    <%-- Affichage des espaces --%>
+    <% for (int l = cpt; l < i; l++) { %>
+        &nbsp;&nbsp;
     <% } %>
+
+    <%-- Affichage des étoiles --%>
+    <% for (int j = 1; j <= i; j++) { %>
+       <%= "*" %>
+    <% } %>
+</br>
+<% } %>
+<% for(int i = 1 ; i <= cpt; i++) { %>
+    <% out.print("*"); %>
+    <% for(int j = 1 ; j < i ;j++) { %>
+        &nbsp;&nbsp;
+    <% } %>
+    </br>
+<% } %>
 </p>
 <h2>Exercice 7 : La table de multiplication</h2>
 <p>Ecrire le code afin de créser une table de multiplication</p>
