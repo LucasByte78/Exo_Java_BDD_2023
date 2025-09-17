@@ -69,11 +69,20 @@ else
     } else { out.print("La valeur C n'est pas comprise entre A et B\n"); }
 }
 %>
-
+</p>
 <h2>Exercice 2 : Pair ou Impair ?</h2>
 <p>Écrivez un programme pour vérifier si un nombre est pair ou impair en utilisant une structure if</p>
 <p>
-
+<%    
+    if(intValeurA % 2 == 0) 
+    {
+        out.print("La valeur est paire\n");
+    }
+    else
+    {
+        out.print("La valeur est impaire\n");
+    }
+%>
 </p>
 <p><a href="index.html">Retour au sommaire</a></p>
 </body>
