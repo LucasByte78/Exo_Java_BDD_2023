@@ -82,7 +82,7 @@
 <p>
     <% for (int i = 1; i <= cpt; i++) { %>
         <% // Affichage des espaces // %>
-        <% for (int l = cpt; l < i; l++) { %>
+        <% for (int l = cpt - i; l >= 1; l--) { %>
             &nbsp;
         <% } %>
 
