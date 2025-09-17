@@ -64,19 +64,17 @@
 <p>Ecrire le code afin de produire un triangle rectangle aligné sur la droite</p>
     <p>
         <pre style="font-family: monospace;">
-        <%        
-        for (int k = 1; k <= cpt; k++) {
+        <% for (int k = 1; k <= cpt; k++) { %>
             // espaces avant les étoiles
-            for (int m = 1; m <= cpt - k; m++) {
+            <% for (int m = 1; m <= cpt - k; m++) { %>
                 &nbsp;&nbsp;
-            }
+            <% } %>
             // étoiles
-            for (int l = 1; l <= k; l++) {
+            <% for (int l = 1; l <= k; l++) {
                 out.print("*");
             }
             out.print("\n"); // retour à la ligne
-        }
-        %>
+        } %>
     </p>
 <h2>Exercice 5 : Triangle isocele</h2>
 <p>Ecrire le code afin de produire un triangle rectangle aligné sur la droite</p>
