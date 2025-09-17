@@ -99,15 +99,31 @@
 <p>Exemple si l'utilisateur saisie le valeur 5</p>
 <p>
     <% // Triangle supérieur // %>
-    <% for(int i = 1; i <= cpt; i++) { %>
-        <% for(int j = cpt ; j < i ; j--) { %>
+    <% for (int i = 1; i <= cpt; i++) { %>
+        <%-- Affichage des espaces --%>
+        <% for (int l = cpt - i; l >= 1; l--) { %>
             &nbsp;&nbsp;
         <% } %>
-        <% for(int k = 1 ; k <= i; k++) { %>
-            <% out.print("*"); %>
+
+        <%-- Affichage des étoiles --%>
+        <% for (int j = 1; j <= i; j++) { %>
+           <%= "*" %>
         <% } %>
     </br>
-<% } %>     
+    <% } %>
+    <% // Triangle inférieur // %>
+        <% for (int i = cpt; i >= 1; i--) { %>
+        <%-- Affichage des espaces --%>
+        <% for (int l = cpt - i; l >= 1; l--) { %>
+            &nbsp;&nbsp;
+        <% } %>
+
+        <%-- Affichage des étoiles --%>
+        <% for (int j = 1; j <= i; j++) { %>
+           <%= "*" %>
+        <% } %>
+    </br>
+    <% } %>
 </p>
 <h2>Exercice 7 : La table de multiplication</h2>
 <p>Ecrire le code afin de créser une table de multiplication</p>
