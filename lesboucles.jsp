@@ -69,7 +69,7 @@
             <% for (int m = 1; m <= cpt - k; m++) { %>
                 &nbsp;&nbsp;
             <% } %>
-            <% // étoiles ù>
+            <% // étoiles %>
             <% for (int l = 1; l <= k; l++) {
                 out.print("*");
             }
