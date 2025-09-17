@@ -98,7 +98,16 @@
 <p>Ecrire le code afin de produire un losange</p>
 <p>Exemple si l'utilisateur saisie le valeur 5</p>
 <p>
-    
+    <% // Triangle supérieur // %>
+    <% for(int i = 1; i <= cpt; i++) { %>
+        <% for(int j = cpt ; j < i ; j--) { %>
+            &nbsp;&nbsp;
+        <% } %>
+        <% for(int k = 1 ; k <= i; k++) { %>
+            <% out.print("*"); %>
+        <% } %>
+    </br>
+<% } %>     
 </p>
 <h2>Exercice 7 : La table de multiplication</h2>
 <p>Ecrire le code afin de créser une table de multiplication</p>
