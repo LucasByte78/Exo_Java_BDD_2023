@@ -41,6 +41,8 @@ Exemple :</br>
 A = <% out.print(intValeurA); %></br>
 B = <% out.print(intValeurB); %></br>
 C = <% out.print(intValeurC); %></br>
+</p>
+<p>
 <% 
 if (intValeurA < intValeurB) 
 {
