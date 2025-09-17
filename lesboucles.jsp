@@ -81,12 +81,12 @@
 <p>Exemple si l'utilisateur saisie le valeur 5</p>
 <p>
     <% for (int i = 1; i <= cpt; i++) { %>
-        <%-- Affichage des espaces --%>
+        <% // Affichage des espaces // %>
         <% for (int l = cpt; l < i; l++) { %>
             &nbsp;
         <% } %>
 
-        <%-- Affichage des étoiles --%>
+        <% // Affichage des étoiles // %>
         <% for (int j = 1; j <= i; j++) { %>
            <%= "*" %>
         <% } %>
@@ -100,9 +100,10 @@
 <p>
     <% // Partie supérieure du losange //
     <% for (int i = 1; i <= cpt; i++) { %>
-    <%-- Affichage des espaces --%>
-    <% for (int l = cpt; l < i; l++) { %>
-        &nbsp;&nbsp;
+    <% // Affichage des espaces // %>
+        <% for (int l = cpt; l < i; l++) { %>
+            &nbsp;&nbsp;
+        <% } %>
     <% } %>
 
     <% // Affichage des étoiles // %>
