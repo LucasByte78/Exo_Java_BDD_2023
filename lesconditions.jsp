@@ -6,27 +6,31 @@
 <body bgcolor=white>
 <h1>Exercices sur les conditions</h1>
 <form action="#" method="post">
-    <p>Saisir la valeur 1 : <input type="text" id="inputValeur" name="valeur1">
-    <p>Saisir la valeur 2 : <input type="text" id="inputValeur" name="valeur2">
+    <p>Saisir la valeur A : <input type="text" id="inputValeur" name="valeurA">
+    <p>Saisir la valeur B : <input type="text" id="inputValeur" name="valeurB">
+    <p>Saisir la valeur C : <input type="text" id="inputValeur" name="valeurC">
     <p><input type="submit" value="Afficher">
 </form>
 <%-- Récupération des valeurs --%>
-    <% String valeur1 = request.getParameter("valeur1"); %>
-    <% String valeur2 = request.getParameter("valeur2"); %>
+    <% String valeurA = request.getParameter("valeurA"); %>
+    <% String valeurB = request.getParameter("valeurB"); %>
+    <% String valeurC = request.getParameter("valeurC"); %>
+
 
     <%-- Vérification de la condition entre les deux valeurs --%>
-    <% if (valeur1 != null && valeur2 != null) { %>
+    <% if (valeurA != null && valeurB != null && valeurC != null ) { %>
         <%-- Conversion des valeurs en entiers pour la comparaison --%>
-        <% int intValeur1 = Integer.parseInt(valeur1); %>
-        <% int intValeur2 = Integer.parseInt(valeur2); %>
+        <% int intValeurA = Integer.parseInt(valeurA); %>
+        <% int intValeurB = Integer.parseInt(valeurB); %>
+        <% int intValeurC = Integer.parseInt(valeurC); %>
         
         <%-- Condition if pour comparer les valeurs --%>
-        <% if (intValeur1 > intValeur2) { %>
-            <p>Valeur 1 est supérieure à Valeur 2.</p>
-        <% } else if (intValeur1 < intValeur2) { %>
-            <p>Valeur 1 est inférieure à Valeur 2.</p>
+        <% if (intValeurA > intValeurB) { %>
+            <p>Valeur A est supérieure à Valeur B.</p>
+        <% } else if (intValeurA < intValeurB) { %>
+            <p>Valeur A est inférieure à Valeur B.</p>
         <% } else { %>
-            <p>Valeur 1 est égale à Valeur 2.</p>
+            <p>Valeur A est égale à Valeur B.</p>
         <% } %>
    
     
@@ -34,10 +38,37 @@
 <p>Ecrire un programme qui demande à l'utilisateur de saisir 3 valeurs (des chiffres),</br>
 A, B et C et dites nous si la valeur de C est comprise entre A et B.</br>
 Exemple :</br>
-A = 10</br>
-B = 20</br>
-C = 15</br>
-Oui C est compris entre A et B</p>
+A = <% out.print(intValeurA); %></br>
+B = <% out.print(intValeurB); %></br>
+C = <% out.print(intValeurC); %></br>
+<% 
+if (intValeurA < intValeurB) 
+{
+    if(intValeurA < intValeurC) 
+    {
+        if(intValeurB > intValeurC) 
+        {
+            out.print("La valeur C est comprise entre A et B\n");
+        } 
+        else 
+        { 
+        out.print("La valeur C n'est pas comprise entre A et B\n"); 
+        }
+    } 
+    else 
+    { 
+        out.print("La valeur C n'est pas comprise entre A et B\n"); 
+    }
+} 
+else 
+{
+    if(intValeurA > intValeurC) {
+        if(intValeurB < intValeurC) {
+            out.print("La valeur C est comprise entre A et B\n");
+        } else { out.print("La valeur C n'est pas comprise entre A et B\n"); }
+    } else { out.print("La valeur C n'est pas comprise entre A et B\n"); }
+}
+%>
 
 <h2>Exercice 2 : Pair ou Impair ?</h2>
 <p>Écrivez un programme pour vérifier si un nombre est pair ou impair en utilisant une structure if</p>
