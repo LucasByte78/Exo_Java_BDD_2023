@@ -62,19 +62,19 @@
 
 <h2>Exercice 4 : Triangle rectangle 2</h2>
 <p>Ecrire le code afin de produire un triangle rectangle aligné sur la droite</p>
-    <p>
-        <pre style="font-family: monospace;">
-        <% for (int k = 1; k <= cpt; k++) { %>
-            <% // espaces avant les étoiles %>
-            <% for (int m = 1; m <= cpt - k; m++) { %>
-                &nbsp;&nbsp;
-            <% } %>
-            <% // étoiles %>
-            <% for (int l = 1; l <= k; l++) {
-                out.print("*");
-            }
-            out.print("\n"); // retour à la ligne
-        } %>
+<p>
+    <% for (int i = 1; i <= cpt; i++) { %>
+        <%-- Affichage des espaces --%>
+        <% for (int l = 1; l <= cpt - i; l++) { %>
+            &nbsp;&nbsp;
+        <% } %>
+
+        <%-- Affichage des étoiles --%>
+        <% for (int j = 1; j <= i; j++) { %>
+           <%= "*" %>
+        <% } %>
+    </br>
+    <% } %>
     </p>
 <h2>Exercice 5 : Triangle isocele</h2>
 <p>Ecrire le code afin de produire un triangle rectangle aligné sur la droite</p>
