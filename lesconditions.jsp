@@ -44,6 +44,7 @@ Oui C est compris entre A et B</p>
     System.out.println("A = %d\n", request.getParameter("valeur1"));
     System.out.println("B = %d\n", request.getParameter("valeur2"));
     System.out.println("C = %d\n", request.getParameter("valeur3"));
+%>
 <p>
     <% String val1 = request.getParameter("valeur1"); %>
     <% String val2 = request.getParameter("valeur2"); %>
