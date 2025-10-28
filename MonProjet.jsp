@@ -25,7 +25,7 @@
 <body bgcolor=white>
   <h1>Mon gestionnaire de tâches</h1>
   <form action="#" method="post">
-    <p>Saisir un nom de tâche : <input type="text" id="inputValeur" name="tache">
+    <p class="textarea">Saisir un nom de tâche : <input type="text" id="inputValeur" name="tache">
     <p><button type="submit">Ajouter une tâche</button>
 </form>
 </body>
