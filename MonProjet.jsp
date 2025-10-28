@@ -8,6 +8,12 @@
       color: white;
       border: none;
       cursor: pointer;
+      width: 100%;
+      margin-top: 10px;
+      padding: 10px;
+      font-size: 14px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
   }
   button:hover {
       background-color: #005fa3;
