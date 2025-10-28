@@ -16,11 +16,11 @@
 
     <%-- Division de la chaîne de chiffres séparés par des espaces --%>
     <% String[] tableauDeChiffres = chaine.split("\\s+"); %>
-    <p>La tableau contient <%= tableauDeChiffres.length %> valeurs</br>
-    Chiffre 1 : <%= Integer.parseInt(tableauDeChiffres[0]) %></br>
-    Chiffre 2 : <%= Integer.parseInt(tableauDeChiffres[1]) %></br>
-    Chiffre 3 : <%= Integer.parseInt(tableauDeChiffres[2]) %></p>
+    <p>La tableau contient <%= tableauDeChiffres.length %> valeurs</p>
+    <% for(int i = 0 ; i < tableauDeChiffres.lenght ; i++) { %>
     
+
+    Chiffre 1 : <%= Integer.parseInt(tableauDeChiffres[0]) %>    
 <h2>Exercice 1 : La carré de la première valeur</h2>
 <% 
     int valeur1 = Integer.parseInt(tableauDeChiffres[0]);
@@ -29,13 +29,24 @@
     int carrepremierevaleur = valeur1 * valeur1;
 %>
 <%="Le carré de la première valeur est : " + carrepremierevaleur %>
+
 <h2>Exercice 2 : La somme des 2 premières valeurs</h2>
-<p>Ecrire un programme afin d'afficher la somme des deux premières valeurs</p>
+<% int somme = valeur1 + valeur2; %>
+<%="La somme des valeurs 1 et 2 est : " + somme %>
 
 <h2>Exercice 3 : La somme de toutes les valeurs</h2>
 <p>L'utilisateur peut à présent saisir autant de valeurs qu'il le souhaite dans champs de saisie.</br>
 Ecrire un programme afin de faire la somme de toutes les valeurs saisie par l'utilisateur</p>
-
+<% 
+    int longueurchaine = chaine.lenght();
+    int sommegenerale = 0;
+%>
+<% 
+    for(int i = 0 ; i < longueurchaine ; i++)
+    {
+        somme += chaine[i];
+    }
+%>
 <h2>Exercice 4 : La valeur maximum</h2>
 <p>Ecrire un programme pour afficher la valeur maximale saisie par l'utilisateur</p>
 
