@@ -17,10 +17,9 @@
     <%-- Division de la chaîne de chiffres séparés par des espaces --%>
     <% String[] tableauDeChiffres = chaine.split("\\s+"); %>
     <p>La tableau contient <%= tableauDeChiffres.length %> valeurs</p>
-    <% for(int i = 0 ; i < tableauDeChiffres.lenght ; i++) { %>
-    
+    <% for(int i = 0 ; i < tableauDeChiffres.lenght() ; i++) { %>
+    <%="Chiffre " + i + " : " + tableauDeChiffres[i] } %>
 
-    Chiffre 1 : <%= Integer.parseInt(tableauDeChiffres[0]) %>    
 <h2>Exercice 1 : La carré de la première valeur</h2>
 <% 
     int valeur1 = Integer.parseInt(tableauDeChiffres[0]);
