@@ -62,19 +62,25 @@
 <p>
 
     <% if (A%2 == 0) {%>
-        <%= "La valeur A entree est pair\n"%>
+        <%= "La valeur A entree est pair"%>
+        </br>
     <%} else {%>
-        <%= "La valeur A entree est impair\n"%>
+        <%= "La valeur A entree est impair"%>
+        </br>
     <%}%>
         <% if (B%2 == 0) {%>
-        <%= "La valeur B entree est pair\n"%>
+        <%= "La valeur B entree est pair"%>
+        </br>
     <%} else {%>
-        <%= "La valeur B entree est impair\n"%>
+        <%= "La valeur B entree est impair"%>
+        </br>
     <%}%>
     <% if (C%2 == 0) {%>
-        <%= "La valeur C entree est pair\n"%>
+        <%= "La valeur C entree est pair"%>
+        </br>
     <%} else {%>
-        <%= "La valeur C entree est impair\n"%>
+        <%= "La valeur C entree est impair"%>
+        </br>
     <%}%>
 </p>
 
