@@ -38,13 +38,13 @@
 <p>L'utilisateur peut à présent saisir autant de valeurs qu'il le souhaite dans champs de saisie.</br>
 Ecrire un programme afin de faire la somme de toutes les valeurs saisie par l'utilisateur</p>
 <% 
-    int longueurchaine = chaine.lenght();
+    int longueurchaine = tableauDeChiffres.lenght();
     int sommegenerale = 0;
 %>
 <% 
     for(int i = 0 ; i < longueurchaine ; i++)
     {
-        somme += chaine[i];
+        sommegenerale += tableauDeChiffres[i];
     }
 %>
 <h2>Exercice 4 : La valeur maximum</h2>
