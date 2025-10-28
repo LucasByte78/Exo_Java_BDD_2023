@@ -8,7 +8,7 @@
       color: white;
       border: none;
       cursor: pointer;
-      width: 100%;
+      width: 20%;
       margin-top: 10px;
       padding: 10px;
       font-size: 14px;
