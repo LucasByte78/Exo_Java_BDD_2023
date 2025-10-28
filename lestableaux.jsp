@@ -16,8 +16,8 @@
 
     <%-- Division de la chaîne de chiffres séparés par des espaces --%>
     <% String[] tableauDeChiffres = chaine.split("\\s+"); %>
-    <p>La tableau contient <%= tableauDeChiffres.length() %> valeurs</p>
-    <% for(int i = 0 ; i < tableauDeChiffres.length() ; i++) { %>
+    <p>La tableau contient <%= tableauDeChiffres.length %> valeurs</p>
+    <% for(int i = 0 ; i < tableauDeChiffres.length ; i++) { %>
     <%="Chiffre " + i + " : " + tableauDeChiffres[i] } %>
 
 <h2>Exercice 1 : La carré de la première valeur</h2>
@@ -37,7 +37,7 @@
 <p>L'utilisateur peut à présent saisir autant de valeurs qu'il le souhaite dans champs de saisie.</br>
 Ecrire un programme afin de faire la somme de toutes les valeurs saisie par l'utilisateur</p>
 <% 
-    int longueurchaine = tableauDeChiffres.lenght();
+    int longueurchaine = tableauDeChiffres.lenght;
     int sommegenerale = 0;
 %>
 <% 
