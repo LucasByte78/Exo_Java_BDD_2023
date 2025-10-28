@@ -3,17 +3,19 @@
 <head>
 <title>Gestionnaire de tâches</title>
 <style>
-  button {
-      background-color: #0078d7;
-      color: white;
-      border: none;
-      cursor: pointer;
+  button, textarea  {
       width: 20%;
       margin-top: 10px;
       padding: 10px;
       font-size: 14px;
       border-radius: 6px;
-      border: 1px solid #ccc;
+      border: 1px solid #ccc;    
+  }
+  button {
+      background-color: #0078d7;
+      color: white;
+      border: none;
+      cursor: pointer;
   }
   button:hover {
       background-color: #005fa3;
