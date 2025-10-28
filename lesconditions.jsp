@@ -34,7 +34,9 @@
     
 <h2>Exercice 1 : Comparaison 1</h2>
 <%="La valeur A vaut " + valeur1 %>
+</br>
 <%="La valeur B vaut " + valeur2 %>
+</br>
 <%="La valeur C vaut " + valeur3 %>
 <p>
     <% String val1 = request.getParameter("valeur1"); %>
