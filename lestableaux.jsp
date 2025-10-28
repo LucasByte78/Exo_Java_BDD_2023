@@ -22,8 +22,13 @@
     Chiffre 3 : <%= Integer.parseInt(tableauDeChiffres[2]) %></p>
     
 <h2>Exercice 1 : La carré de la première valeur</h2>
-<p>Ecrire un programme afin d'afficher le carré de la première valeur</p>
-
+<% 
+    int valeur1 = Integer.parseInt(tableauDeChiffres[0]);
+    int valeur2 = Integer.parseInt(tableauDeChiffres[1]);
+    int valeur3 = Integer.parseInt(tableauDeChiffres[2]);
+    int carrepremierevaleur = valeur1 * valeur1;
+%>
+<%="Le carré de la première valeur est : " + carrepremierevaleur %>
 <h2>Exercice 2 : La somme des 2 premières valeurs</h2>
 <p>Ecrire un programme afin d'afficher la somme des deux premières valeurs</p>
 
