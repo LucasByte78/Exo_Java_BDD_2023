@@ -40,7 +40,10 @@ A = 10</br>
 B = 20</br>
 C = 15</br>
 Oui C est compris entre A et B</p>
-
+<%
+    System.out.println("A = %d\n", request.getParameter("valeur1"));
+    System.out.println("B = %d\n", request.getParameter("valeur2"));
+    System.out.println("C = %d\n", request.getParameter("valeur3"));
 <p>
     <% String val1 = request.getParameter("valeur1"); %>
     <% String val2 = request.getParameter("valeur2"); %>
@@ -62,24 +65,22 @@ Oui C est compris entre A et B</p>
 </p>
 
 <h2>Exercice 2 : Pair ou Impair ?</h2>
-<p>Écrivez un programme pour vérifier si un nombre est pair ou impair en utilisant une structure if</p>
-
 <p>
 
     <% if (A%2 == 0) {%>
-        <%= "La valeur A entree est pair"%>
+        <%= "La valeur A entree est pair\n"%>
     <%} else {%>
-        <%= "La valeur A entree est impair"%>
+        <%= "La valeur A entree est impair\n"%>
     <%}%>
         <% if (B%2 == 0) {%>
-        <%= "La valeur B entree est pair"%>
+        <%= "La valeur B entree est pair\n"%>
     <%} else {%>
-        <%= "La valeur B entree est impair"%>
+        <%= "La valeur B entree est impair\n"%>
     <%}%>
     <% if (C%2 == 0) {%>
-        <%= "La valeur C entree est pair"%>
+        <%= "La valeur C entree est pair\n"%>
     <%} else {%>
-        <%= "La valeur C entree est impair"%>
+        <%= "La valeur C entree est impair\n"%>
     <%}%>
 </p>
 
