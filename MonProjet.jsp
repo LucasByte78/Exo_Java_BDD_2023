@@ -2,25 +2,51 @@
 <html>
 <head>
 <title>Gestionnaire de tâches</title>
-<style>
-  input, button, textarea  {
-      width: 20%;
-      margin-top: 10px;
-      padding: 10px;
-      font-size: 14px;
-      border-radius: 6px;
-      border: 1px solid #ccc;    
-  }
-  button {
-      background-color: #0078d7;
-      color: white;
-      border: none;
-      cursor: pointer;
-  }
-  button:hover {
-      background-color: #005fa3;
-  }
-</style>
+  <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background-color: #f5f5f5;
+        }
+        h1 { color: #333; }
+        form {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            width: 400px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        }
+        input, textarea, button {
+            width: 100%;
+            margin-top: 10px;
+            padding: 10px;
+            font-size: 14px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+        }
+        button {
+            background-color: #0078d7;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #005fa3;
+        }
+        .task-list {
+            margin-top: 30px;
+        }
+        .task {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        .task h3 {
+            margin: 0 0 5px 0;
+        }
+    </style>
 </head>
 <body bgcolor=white>
   <h1>Mon gestionnaire de tâches</h1>
