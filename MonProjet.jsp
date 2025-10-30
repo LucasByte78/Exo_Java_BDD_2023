@@ -17,6 +17,13 @@
             border-radius: 6px;
             border: 1px solid #ccc;
         }
+        form {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            width: 400px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        }
         button {
             background-color: #0078d7;
             color: white;
@@ -29,13 +36,7 @@
         .task-list {
             margin-top: 30px;
         }
-        .task {
-            background: white;
-            padding: 15px;
-            border-radius: 8px;
-            margin-bottom: 10px;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-        }
+        
         .task h3 {
             margin: 0 0 5px 0;
         }
