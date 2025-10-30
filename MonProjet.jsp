@@ -80,6 +80,18 @@
     <textarea id="description" name="description" rows="3"></textarea>
 
     <p><button type="submit">Ajouter une tâche</button>
-</form>
+    <%
+        String Nom = request.getParameter("Nom");
+        String Description = request.getParameter("Description");
+    
+        if (valeur != null && !valeur.isEmpty()) {
+            MyClass tache = new MyClass(Nom, Description);
+    %>
+            <p>Nom de la tâche : <%= Task.Nom %></p>
+            <p>Description de la tâche : <%= Task.Description %></p>
+    <%
+        }
+    %>
+  </form>
 </body>
 </html>
