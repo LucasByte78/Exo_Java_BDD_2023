@@ -65,9 +65,6 @@ public class Task {
 <head>
     <meta charset="UTF-8">
     <title>Gestion des tâches</title>
-<%-- ================================
-     Style CSS
-     ================================ --%>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -199,8 +196,8 @@ public class Task {
             <h3><%= t.getTitle() %></h3>
             <p><%= t.getDescription() %></p>
             <div class="actions">
-                 <a href="tasks.jsp?action=toggle&index=<%=i%>"><%= toggleText %></a>
-                 //<a href="tasks.jsp?action=delete&index=<%=i%>" onclick="return confirm('Supprimer cette tâche ?');">Supprimer</a>
+                 <a href="MonProjet.jsp?action=toggle&index=<%=i%>"><%= toggleText %></a>
+                 //<a href="MonProjet.jsp?action=delete&index=<%=i%>" onclick="return confirm('Supprimer cette tâche ?');">Supprimer</a>
             </div>
         </div>
     <%
