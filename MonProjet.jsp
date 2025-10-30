@@ -86,7 +86,7 @@
         String Description = request.getParameter("Description");
     
         if (Nom != null && !Nom.isEmpty()) {
-            MyClass tache = new MyClass(Nom, Description);
+            Task tache = new Task(Nom, Description);
     %>
             <p>Nom de la tâche : <%= Task.Nom %></p>
             <p>Description de la tâche : <%= Task.Description %></p>
