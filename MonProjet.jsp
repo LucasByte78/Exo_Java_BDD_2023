@@ -78,7 +78,8 @@ public class Task {
         h1 { color: #333; }
         form {
             background: #fff;
-            padding: 30px;
+            padding: 20px;
+            padding-right: 20px
             border-radius: 10px;
             width: 450px;
             box-shadow: 0 2px 6px rgba(0,0,0,0.1);
