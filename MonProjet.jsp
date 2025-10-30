@@ -147,7 +147,7 @@ public class Task {
 <h1>📝 Liste de tâches</h1>
 
 <!-- Formulaire d'ajout -->
-<form method="post" action="TPTaches.jsp">
+<form method="post" action="MonProjet.jsp">
     <label for="title">Titre :</label>
     <input type="text" id="title" name="title" required>
 
@@ -167,7 +167,7 @@ public class Task {
      if (tasks.isEmpty()) 
      {
     %>
-        <p>Aucune tâche pour le moment.</p>
+        <h2>Aucune tâche pour le moment.</h2>
     <%
      } 
      else 
