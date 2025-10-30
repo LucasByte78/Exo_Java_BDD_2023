@@ -3,7 +3,7 @@
 <head>
 <title>Gestionnaire de tâches</title>
 <style>
-  button, textarea  {
+  input, button, textarea  {
       width: 20%;
       margin-top: 10px;
       padding: 10px;
@@ -25,7 +25,12 @@
 <body bgcolor=white>
   <h1>Mon gestionnaire de tâches</h1>
   <form action="#" method="post">
-    <p class="textarea">Saisir un nom de tâche : <input type="text" id="inputValeur" name="tache">
+    <label for="nom">Nom de la tâche :</label>
+    <input type="text" id="nom" name="nom" required>
+
+    <label for="description">Description de la tâche :</label>
+    <textarea id="description" name="description" rows="3"></textarea>
+
     <p><button type="submit">Ajouter une tâche</button>
 </form>
 </body>
