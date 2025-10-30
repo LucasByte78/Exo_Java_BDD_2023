@@ -22,6 +22,25 @@
     }
   }
 %>
+<%
+     ArrayList<Task> tasks = (ArrayList<Task>) session.getAttribute("tasks");
+
+      if (tasks == null) {
+          tasks = new ArrayList<Task>();
+          session.setAttribute("tasks", tasks);
+     }
+
+     // Vérifier si le formulaire a été soumis
+     String title = request.getParameter("Nom");
+     String description = request.getParameter("Description");
+
+     if (Nom != null && Description != null && !Nom.trim().isEmpty()) {
+          // Créer et ajouter une nouvelle tâche
+          Task newTask = new Task(Nom.trim(), Description.trim());
+          tasks.add(newTask);
+          session.setAttribute("tasks", tasks);
+     }
+%>
 <html>
 <head>
 <title>Gestionnaire de tâches</title>
@@ -81,18 +100,49 @@
     <textarea id="description" name="description" rows="3"></textarea>
 
     <p><button type="submit">Ajouter une tâche</button>
-    <%
-        String Nom = request.getParameter("Nom");
-        String Description = request.getParameter("Description");
-    
-        if (Nom != null && !Nom.isEmpty()) {
-            Task tache = new Task(Nom, Description);
-    %>
-            <p>Nom de la tâche : <%= tache.Nom %></p>
-            <p>Description de la tâche : <%= tache.Description %></p>
-    <%
-        }
-    %>
+    <div class="task-list">
+      <h2>Vos tâches :</h2>
+      <%
+       if (tasks.isEmpty()) 
+       {
+      %>
+          <p>Aucune tâche pour le moment.</p>
+      <%
+       } 
+       else 
+       {
+            for (int i = 0; i < tasks.size(); i++) 
+            {
+                 Task t = tasks.get(i);
+  
+                 // Déterminer la classe CSS selon l'état
+                 String taskClass = "";
+                 if (t.isCompleted()) {
+                      taskClass = "completed";
+                 }
+  
+                 // Déterminer le texte pour la date d'échéance
+                 String dueDateText = "Aucune";
+                 if (t.getDueDate() != null && !t.getDueDate().isEmpty()) {
+                      dueDateText = t.getDueDate();
+                 }
+  
+                 // Déterminer le texte pour le lien d'action
+                 String toggleText = "Terminer";
+                 if (t.isCompleted()) {
+                      toggleText = "Rétablir";
+                 }
+  
+      %>
+      <div class="task <%= taskClass %>">
+          <h3><%= t.getTitle() %></h3>
+          <p><%= t.getDescription() %></p>
+          <div class="actions">
+               <a href="tasks.jsp?action=toggle&index=<%=i%>"><%= toggleText %></a>
+               //<a href="tasks.jsp?action=delete&index=<%=i%>" onclick="return confirm('Supprimer cette tâche ?');">Supprimer</a>
+          </div>
+      </div>
+    </div>
   </form>
 </body>
 </html>
