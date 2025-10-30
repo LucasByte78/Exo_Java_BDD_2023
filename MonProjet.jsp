@@ -1,4 +1,26 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%
+  public class Task 
+  {
+    String Nom;
+    String Description;
+
+    public Task(String _Nom, String _Description)
+    {
+      Nom = _Nom;
+      Description = _Description;
+    }
+    public String getNom()
+    {
+      return Nom;
+    }
+  
+    public String getDescription()
+    {
+      return Description;
+    }
+  }
+
 <html>
 <head>
 <title>Gestionnaire de tâches</title>
