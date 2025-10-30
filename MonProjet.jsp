@@ -86,7 +86,7 @@ public class Task {
         input, textarea, button {
             width: 90%;
             margin: 10px;
-            padding: 20px;
+            padding: 10px;
             font-size: 14px;
             border-radius: 6px;
             border: 1px solid #ccc;
