@@ -4,18 +4,16 @@
 <%-- ================================
      Définition de la classe Task
      ================================ --%>
-<%-- La classe est déclarée une seule fois au niveau de la page (déclaration JSP <%! ... %>) --%>
 <%!
 public class Task {
     private String Nom;
     private String Description;
-    private String DateEcheance; // Renommé pour plus de clarté
+    private String DateEcheance;
     private boolean TacheFinie;
 
     public Task(String _Nom, String _Description, String _DateEcheance) {
         Nom = _Nom;
         Description = _Description;
-        // Gère le cas où le champ de date est vide
         DateEcheance = (_DateEcheance != null && !_DateEcheance.isEmpty()) ? _DateEcheance : "Non spécifiée";
         TacheFinie = false;
     }
@@ -25,7 +23,6 @@ public class Task {
     public String getDate() { return DateEcheance; }
     public boolean isTacheFinie() { return TacheFinie; }
 
-    // Nouvelle méthode pour basculer le statut (Terminé/Rétablir)
     public void toggleStatus() {
         TacheFinie = !TacheFinie;
     }
@@ -36,7 +33,6 @@ public class Task {
     // LOGIQUE DE CONTRÔLE
     // ================================
 
-    // 1. Initialisation de la liste des tâches en session
     ArrayList<Task> tasks = (ArrayList<Task>) session.getAttribute("tasks");
 
     if (tasks == null) {
@@ -44,7 +40,6 @@ public class Task {
         session.setAttribute("tasks", tasks);
     }
 
-    // Récupération des paramètres pour les actions (GET)
     String action = request.getParameter("action");
     String indexStr = request.getParameter("index");
     int index = -1;
@@ -53,27 +48,27 @@ public class Task {
         try {
             index = Integer.parseInt(indexStr);
         } catch (NumberFormatException e) {
-            // Index invalide, on laisse index = -1
+            // Ignorer
         }
     }
 
-    // 2. Traitement du formulaire d'ajout (POST)
+    // Traitement du formulaire d'ajout (POST)
     if ("POST".equalsIgnoreCase(request.getMethod())) {
         String Nom = request.getParameter("Nom");
         String Description = request.getParameter("Description");
-        String DateEcheance = request.getParameter("Date"); // Récupération de la date
+        String DateEcheance = request.getParameter("Date");
 
         if (Nom != null && !Nom.trim().isEmpty()) {
             Task newTask = new Task(Nom.trim(), Description.trim(), DateEcheance);
             tasks.add(newTask);
             
-            // Pattern PRG (Post/Redirect/Get) : Redirection pour éviter la soumission multiple
+            // Redirection (Pattern PRG)
             response.sendRedirect("MonProjet.jsp");
-            return; // Arrêter l'exécution du JSP après la redirection
+            return;
         }
     }
 
-    // 3. Traitement des actions (GET) : Supprimer ou Terminer/Rétablir
+    // Traitement des actions (GET)
     if (action != null && index != -1 && index >= 0 && index < tasks.size()) {
         if ("toggle".equals(action)) {
             tasks.get(index).toggleStatus();
@@ -81,9 +76,9 @@ public class Task {
             tasks.remove(index);
         }
 
-        // Redirection après l'action pour nettoyer l'URL
+        // Redirection
         response.sendRedirect("MonProjet.jsp");
-        return; // Arrêter l'exécution du JSP après la redirection
+        return;
     }
 %>
 
@@ -91,81 +86,112 @@ public class Task {
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Gestion des tâches</title> <style>
+    <title>Gestion des tâches</title>
+    <style>
+        /* Style Sobriété */
         body {
-            font-family: Arial, sans-serif;
-            margin: 40px;
-            background-color: #f5f5f5;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            margin: 40px auto;
+            max-width: 800px;
+            background-color: #f8f9fa; /* Très léger gris */
+            color: #343a40; /* Texte sombre */
+        }
+        h1 { 
+            color: #343a40; 
+            border-bottom: 2px solid #e9ecef;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
         }
         a {
             text-decoration: none;
-            color: #0078d7;
+            color: #007bff; /* Bleu standard et professionnel */
         }
-        h1 { color: #333; }
+        a:hover {
+            color: #0056b3;
+            text-decoration: underline;
+        }
         form {
             background: #fff;
-            padding: 20px;
-            border-radius: 10px;
-            width: 450px;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-            margin-bottom: 30px;
+            padding: 30px;
+            border-radius: 8px;
+            border: 1px solid #dee2e6; /* Bordure subtile au lieu d'une ombre forte */
         }
-        input, textarea, button {
-            width: 90%;
-            margin: 10px;
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: 600;
+        }
+        input, textarea, button[type="submit"] {
+            width: 100%;
+            margin: 5px 0 15px 0;
             padding: 10px;
-            font-size: 14px;
-            border-radius: 6px;
-            border: 1px solid #ccc;
-            box-sizing: border-box; /* Pour que le padding n'augmente pas la taille totale */
+            font-size: 16px;
+            border-radius: 4px;
+            border: 1px solid #ced4da;
+            box-sizing: border-box;
+        }
+        textarea {
+            resize: vertical;
         }
         button[type="submit"] {
-            background-color: #0078d7;
+            background-color: #343a40; /* Bouton principal sombre */
             color: white;
             border: none;
             cursor: pointer;
+            margin-top: 20px;
+            transition: background-color 0.2s;
         }
         button[type="submit"]:hover {
-            background-color: #005fa3;
+            background-color: #495057;
         }
         .task-list {
-            margin-top: 30px;
+            margin-top: 40px;
         }
         .task {
-            background: white;
-            padding: 15px;
-            border-radius: 8px;
+            background: #fff;
+            padding: 20px;
+            border-radius: 6px;
             margin-bottom: 10px;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            border-left: 5px solid #007bff; /* Accent color sur la gauche */
             position: relative;
-        }
-        .task.TacheFinie {
-            opacity: 0.6;
-            text-decoration: line-through;
         }
         .task h3 {
             margin-top: 0;
+            margin-bottom: 5px;
+            color: #343a40;
         }
-        .actions { /* Renommé .Supprimers en .actions pour plus de clarté */
+        .task p {
+            margin: 5px 0;
+            font-size: 0.95em;
+        }
+        .task.TacheFinie {
+            opacity: 0.7;
+            text-decoration: line-through;
+            border-left: 5px solid #6c757d; /* Gris pour les tâches terminées */
+        }
+        .actions {
             position: absolute;
-            right: 15px;
-            top: 15px;
+            right: 20px;
+            top: 20px;
             display: flex;
-            gap: 10px;
+            gap: 15px;
         }
         .actions a {
-            color: #0078d7;
-        }
-        .actions a:hover {
-            text-decoration: underline;
+            font-size: 0.9em;
+            white-space: nowrap;
         }
         .back-home {
             display: inline-block;
             margin-bottom: 20px;
-            background: #ccc;
-            padding: 8px 12px;
-            border-radius: 5px;
-            color: black;
+            background: #e9ecef;
+            padding: 8px 15px;
+            border-radius: 4px;
+            color: #343a40;
+            font-size: 0.9em;
+            transition: background-color 0.2s;
+        }
+        .back-home:hover {
+            background-color: #dee2e6;
         }
     </style>
 </head>
@@ -173,7 +199,7 @@ public class Task {
 
 <a class="back-home" href="index.html">⬅ Retour à l'accueil</a>
 
-<h1>📝 Liste de tâches</h1>
+<h1>📝 Gestion des Tâches</h1>
 
 <form method="post" action="MonProjet.jsp">
     <label for="Nom">Nom de la tâche :</label>
@@ -208,8 +234,10 @@ public class Task {
     %>
         <div class="task <%= taskClass %>">
             <h3><%= t.getNom() %></h3>
-            <p>Description : <%= t.getDescription() %></p>
-            <p>Date d'échéance : **<%= t.getDate() %>**</p> <div class="actions">
+            <p><strong>Description :</strong> <%= t.getDescription() %></p>
+            <p><strong>Échéance :</strong> <%= t.getDate() %></p>
+
+            <div class="actions">
                 <a href="MonProjet.jsp?action=toggle&index=<%=i%>"><%= toggleText %></a>
                 
                 <a href="MonProjet.jsp?action=delete&index=<%=i%>" onclick="return confirm('Voulez-vous vraiment supprimer la tâche « <%= t.getNom() %> » ?');">Supprimer</a>
