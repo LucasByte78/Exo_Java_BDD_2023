@@ -88,8 +88,8 @@
         if (Nom != null && !Nom.isEmpty()) {
             Task tache = new Task(Nom, Description);
     %>
-            <p>Nom de la tâche : <%= Task.Nom %></p>
-            <p>Description de la tâche : <%= Task.Description %></p>
+            <p>Nom de la tâche : <%= tache.Nom %></p>
+            <p>Description de la tâche : <%= tache.Description %></p>
     <%
         }
     %>
